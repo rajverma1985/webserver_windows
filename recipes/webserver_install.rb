@@ -14,3 +14,26 @@ dsc_script 'Web-Server' do
   }
  EOH
 end
+
+#Install ASP.NET 4.5
+dsc_script 'Web-Asp-Net45' do
+  code <<-EOH
+  WindowsFeature Installaspdotnet45
+  {
+     Name = "Web-Asp-Net45"
+     Ensure = "Present"
+  }
+ EOH
+end
+
+#Enable IIS Management console
+dsc_script 'Web-Management-Console' do
+  code <<-EOH
+  WindowsFeature InstallIISconsole
+  {
+     Name = "Web-Mgmt-Console"
+     Ensure = "Present"
+  }
+ EOH
+end
+
