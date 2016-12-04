@@ -1,0 +1,7 @@
+DEPENDENCIES
+  webserver_windows
+    path: .
+    metadata: true
+
+GRAPH
+  webserver_windows (0.1.0)
